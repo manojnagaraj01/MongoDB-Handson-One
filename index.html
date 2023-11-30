@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>closures</title>
+</head>
+<body>
+    <a href="https://prepbytes-misc-images.s3.ap-south-1.amazonaws.com/assets/1640781204638-employee.json">MangoDB databse link</a>
+    <div>
+        <details class="head">
+            <summary><span class="question">Question 1:</span><br>
+                <p>
+                    Query the collection ""employee"" and list all the documents
+                </p>
+            </summary>
+            <p>db.employee.find({})</p>
+            <img src="./ques1.png" alt=""/>
+        </details>
+        <details class="head">
+            <summary><span class="question">Question 2:</span><br>
+                <p>
+                    Query the collection ""employee"" and list the employees who are having salary more than 30000
+                </p>
+            </summary>
+            <p>db.employee.find({ "salary":{$gt:"30000"}})</p>
+            <img src="./ques2.png" alt="">
+        </details>
+        <details class="head">
+            <summary><span class="question">Question 3:</span><br>
+                <p id="console_answer3">
+                   Query the collection ""employee"" and list the employees who are having experience more than 2 years.
+                </p>
+            </summary>
+            <p>db.employee.find({"overallExp":{$gt:"1"}})</p>
+            <img src="./ques3.png" alt="">
+        </details>
+        <details class="head">
+            <summary><span class="question">Question 4:</span><br>
+                <p>
+                    Query the collection ""employee"" and list the employees who are graduated after 2015 and having experience more than 1 year 
+                </p>
+            </summary>
+            <p>db.employee.find({ "yearGrad": { $gt: "2015" }, "overallExp": { $gt: "1" } })</p>
+            <img src="./ques4.png" alt="">
+        </details>
+        <details class="head">
+            <summary><span class="question">Question 5:</span><br>
+            <p id="console_answer4_1">
+                Query the collection ""employee"" and update the salary of the employee whose salary is greater than 70000 to 65000.
+            </p>
+            </summary>
+            <p>db.employee.updateMany({ "salary": { $gt: "70000" } }, { $set: { "salary": "65000" } })</p>
+            <img src="./ques5.png" alt="">
+        </details>
+        <details class="head">
+            <summary><span class="question">Question 6:</span><br>
+                <p>
+                    Delete all the documents from ""employee"" where last company is Y"
+                </p>
+            </summary>
+            <p id="console_answer4_1">db.employee.deleteMany({"lastCompany" : "Y"})</p>
+            <img src="./ques6.png" alt="">
+        </details>
+    </div>
+</body>
+</html>
